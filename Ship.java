@@ -6,7 +6,7 @@ public class Ship
     private static final int VERTICAL = 1;
 
     private static final String[] directionNames = {"unset direction", "horizontal", "vertical"};
-    private static final String rowNames = "#ABCDEFGHIJKLMNOP";
+    private static final String rowNames = "ABCDEFGHIJKLMNOP";
 
     // Instance variables
     private int row;        // row location of the ship
@@ -94,7 +94,7 @@ public class Ship
     {
         if(isLocationSet())
         {
-            return "(" + rowToLetter(row) + ", " + col + ")";
+            return "(" + rowToLetter(this.row) + ", " + (this.col+1) + ")";
         }
         else
         {
@@ -106,7 +106,7 @@ public class Ship
     // toString value for this Ship
     public String toString()
     {
-        return directionToString() + " ship of length " + length + " at " + locationToString(); 
+        return directionToString() + " ship of length " + this.length + " at " + this.locationToString(); 
 
     }
 
