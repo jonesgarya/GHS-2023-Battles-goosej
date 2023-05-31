@@ -40,7 +40,7 @@ public class Grid
     {
         int row, col;
         int length = myShip.getLength();
-        System.out.println("Add ship of length: " + length);
+        System.out.println("Add " + myShip);
         
         row = myShip.getRow();
         col = myShip.getCol();
