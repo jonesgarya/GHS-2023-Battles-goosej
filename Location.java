@@ -7,8 +7,8 @@ public class Location
 
     private int row;
     private int col;
-    private boolean shipHere;
-    private int status;
+    private boolean shipHere = false;
+    private int status = UNGUESSED;
 
     // Location constructor. 
     public Location()
