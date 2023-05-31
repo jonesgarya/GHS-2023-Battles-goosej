@@ -2,27 +2,23 @@ public class GridTester extends ConsoleProgram
 {
     public void run()
     {
-        Grid grid1 = new Grid();
-        grid1.printStatus();
-        System.out.println();
+        // This code tests out the methods of the Grid class
+
+        // Create vertical ship of length 3 at location (D, 4)        
+        Grid grid = new Grid();
+        Ship s1 = new Ship(3);
         
-        grid1.markMiss(0,0);
-        grid1.markMiss(1,1);
-        grid1.markMiss(2,2);
-        grid1.markMiss(7,7);
-        grid1.markMiss(8,8);
-        grid1.markMiss(9,9);
-        grid1.markHit(1,6);
-        grid1.markHit(2,6);
+        s1.setLocation(3, 3);
+        s1.setDirection(1);
+        grid.addShip(s1);
         
-        grid1.printStatus();
-        System.out.println();
+        // Create hosrizontal ship of length 5 at location (H, 6)        
+        Ship s2 = new Ship(5);
         
-        Grid grid2 = new Grid();
-        grid2.setShip(5,1,true);
-        grid2.setShip(5,2,true);
-        grid2.setShip(5,3,true);
-        
-        grid2.printShips();
+        s2.setLocation(7, 5);
+        s2.setDirection(0);
+        grid.addShip(s2);
+
+        grid.printShips();
     }
 }
