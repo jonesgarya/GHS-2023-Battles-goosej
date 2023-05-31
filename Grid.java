@@ -1,5 +1,10 @@
 public class Grid
 {
+        // Direction constants - copied from Ship.java
+    private static final int UNSET = -1;
+    private static final int HORIZONTAL = 0;
+    private static final int VERTICAL = 1;
+
     // Constants for number of rows and columns.
     public static final int NUM_ROWS = 10;
     public static final int NUM_COLS = 10;
@@ -9,6 +14,7 @@ public class Grid
     private static final String[] STATUS_STRINGS = {"-", "X", "O"};
 
     private Location[][] grid;
+
 
     // Create a new Grid. Initialize each Location in the grid
     // to be a new Location object.
@@ -22,6 +28,33 @@ public class Grid
             {
                 grid[row][col] = new Location();
             }
+        }
+    }
+
+    /**
+    * This method can be called on your own grid. To add a ship
+    * we will go to the ships location and mark a true value
+    * in every location that the ship takes up.
+    */
+    public void addShip(Ship myShip)
+    {
+        int row, col;
+        int length = myShip.getLength();
+        System.out.println("Add ship of length: " + length);
+        
+        row = myShip.getRow();
+        col = myShip.getCol();
+
+
+        for (int i=0; i < length; i++)
+        {
+            if (myShip.getDirection() == VERTICAL)
+            {
+                grid[row+i][col].setShip(true);
+                System.out.println("ship at (" + (row+i) + ", " + col + ")");
+            } else {
+                grid[row][col+i].setShip(true);
+                System.out.println("ship at (" + row + ", " + (col+i) + ")");            }
         }
     }
 
